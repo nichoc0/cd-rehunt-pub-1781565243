@@ -1,0 +1,11 @@
+name: deploy-canary
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        required: false
+jobs:
+  noop:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "target=${{ github.event.inputs.target }}"
